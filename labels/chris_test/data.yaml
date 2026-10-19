@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['decoy', 'real']
+
+roboflow:
+  workspace: christos-palantzidis
+  project: fire-ext-real-decoy
+  version: 1
+  license: Private
+  url: https://app.roboflow.com/christos-palantzidis/fire-ext-real-decoy/1
