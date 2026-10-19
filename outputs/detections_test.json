@@ -1,0 +1,2180 @@
+[
+ {
+  "image_id": "camera_color_image_1727164479163392418",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164479163392418.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164479163392418_0",
+    "bbox_xyxy": [
+     278.0,
+     101.6,
+     337.5,
+     231.9
+    ],
+    "confidence": 0.8621,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164479188921739",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164479188921739.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164479188921739_0",
+    "bbox_xyxy": [
+     278.5,
+     103.6,
+     339.3,
+     232.8
+    ],
+    "confidence": 0.8836,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164479642452488",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164479642452488.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164479642452488_0",
+    "bbox_xyxy": [
+     280.0,
+     102.9,
+     339.8,
+     234.0
+    ],
+    "confidence": 0.8539,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164480113027319",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164480113027319.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164480113027319_0",
+    "bbox_xyxy": [
+     284.4,
+     102.4,
+     341.9,
+     232.3
+    ],
+    "confidence": 0.8675,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164480137294916",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164480137294916.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164480137294916_0",
+    "bbox_xyxy": [
+     284.3,
+     102.7,
+     342.3,
+     233.1
+    ],
+    "confidence": 0.8572,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164480137294916_1",
+    "bbox_xyxy": [
+     284.2,
+     134.9,
+     316.7,
+     233.5
+    ],
+    "confidence": 0.3135,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164480583837249",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164480583837249.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164480583837249_0",
+    "bbox_xyxy": [
+     286.7,
+     103.1,
+     344.7,
+     232.6
+    ],
+    "confidence": 0.8476,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164480605217463",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164480605217463.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164480605217463_0",
+    "bbox_xyxy": [
+     287.3,
+     101.6,
+     345.1,
+     231.3
+    ],
+    "confidence": 0.862,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164481103673510",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164481103673510.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164481103673510_0",
+    "bbox_xyxy": [
+     288.6,
+     96.2,
+     347.7,
+     227.0
+    ],
+    "confidence": 0.8143,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164481126952830",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164481126952830.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164481126952830_0",
+    "bbox_xyxy": [
+     290.1,
+     97.8,
+     350.5,
+     229.2
+    ],
+    "confidence": 0.7909,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164481633105969",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164481633105969.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164481633105969_0",
+    "bbox_xyxy": [
+     288.3,
+     89.0,
+     352.7,
+     225.9
+    ],
+    "confidence": 0.8799,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164481671315159",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164481671315159.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164481671315159_0",
+    "bbox_xyxy": [
+     283.9,
+     91.9,
+     353.9,
+     240.4
+    ],
+    "confidence": 0.9092,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164482161164762",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164482161164762.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164482161164762_0",
+    "bbox_xyxy": [
+     279.7,
+     96.3,
+     350.8,
+     246.4
+    ],
+    "confidence": 0.9064,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164482206618665",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164482206618665.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164482206618665_0",
+    "bbox_xyxy": [
+     271.0,
+     101.2,
+     349.6,
+     266.1
+    ],
+    "confidence": 0.8853,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164483237382359",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164483237382359.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164483237382359_0",
+    "bbox_xyxy": [
+     250.8,
+     84.8,
+     340.2,
+     272.6
+    ],
+    "confidence": 0.9353,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164483260379845",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164483260379845.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164483260379845_0",
+    "bbox_xyxy": [
+     240.0,
+     92.2,
+     343.3,
+     294.5
+    ],
+    "confidence": 0.927,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164483747862226",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164483747862226.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164483747862226_0",
+    "bbox_xyxy": [
+     235.5,
+     95.0,
+     343.3,
+     298.0
+    ],
+    "confidence": 0.9261,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164483782209540",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164483782209540.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164483782209540_0",
+    "bbox_xyxy": [
+     237.2,
+     90.2,
+     354.2,
+     289.1
+    ],
+    "confidence": 0.9164,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164483782209540_1",
+    "bbox_xyxy": [
+     1.1,
+     56.4,
+     37.8,
+     110.0
+    ],
+    "confidence": 0.5265,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164484249585421",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164484249585421.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164484249585421_0",
+    "bbox_xyxy": [
+     249.3,
+     87.0,
+     370.5,
+     282.0
+    ],
+    "confidence": 0.9321,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164484249585421_1",
+    "bbox_xyxy": [
+     1.5,
+     50.1,
+     27.3,
+     99.2
+    ],
+    "confidence": 0.7076,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164484776018973",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164484776018973.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164484776018973_0",
+    "bbox_xyxy": [
+     256.1,
+     72.6,
+     382.0,
+     273.8
+    ],
+    "confidence": 0.9484,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164484776018973_1",
+    "bbox_xyxy": [
+     92.1,
+     43.4,
+     112.5,
+     82.4
+    ],
+    "confidence": 0.7294,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164484803780508",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164484803780508.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164484803780508_0",
+    "bbox_xyxy": [
+     261.2,
+     69.5,
+     387.6,
+     271.9
+    ],
+    "confidence": 0.9458,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164484803780508_1",
+    "bbox_xyxy": [
+     112.4,
+     41.0,
+     129.9,
+     80.1
+    ],
+    "confidence": 0.2602,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164484826121354",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164484826121354.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164484826121354_0",
+    "bbox_xyxy": [
+     269.7,
+     71.9,
+     393.0,
+     276.4
+    ],
+    "confidence": 0.9064,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164485340294837",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164485340294837.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164485340294837_0",
+    "bbox_xyxy": [
+     274.7,
+     75.5,
+     398.4,
+     278.9
+    ],
+    "confidence": 0.9119,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164485375956352",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164485375956352.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164485375956352_0",
+    "bbox_xyxy": [
+     283.6,
+     82.7,
+     400.5,
+     276.6
+    ],
+    "confidence": 0.9434,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164485375956352_1",
+    "bbox_xyxy": [
+     239.1,
+     59.9,
+     255.9,
+     92.0
+    ],
+    "confidence": 0.4024,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164485850357452",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164485850357452.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164485850357452_0",
+    "bbox_xyxy": [
+     283.1,
+     82.4,
+     397.6,
+     278.4
+    ],
+    "confidence": 0.9405,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164485850357452_1",
+    "bbox_xyxy": [
+     44.5,
+     38.8,
+     80.3,
+     98.8
+    ],
+    "confidence": 0.4255,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164485882972273",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164485882972273.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164485882972273_0",
+    "bbox_xyxy": [
+     270.6,
+     92.4,
+     375.8,
+     290.4
+    ],
+    "confidence": 0.8785,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164485882972273_1",
+    "bbox_xyxy": [
+     272.6,
+     75.3,
+     290.4,
+     109.1
+    ],
+    "confidence": 0.4465,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164486318607389",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164486318607389.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164486318607389_0",
+    "bbox_xyxy": [
+     270.2,
+     104.8,
+     366.9,
+     296.8
+    ],
+    "confidence": 0.6178,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164486747705999",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164486747705999.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164486747705999_0",
+    "bbox_xyxy": [
+     251.6,
+     105.8,
+     346.4,
+     313.4
+    ],
+    "confidence": 0.402,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164486782056457",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164486782056457.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164486782056457_0",
+    "bbox_xyxy": [
+     257.9,
+     141.3,
+     320.0,
+     306.5
+    ],
+    "confidence": 0.5282,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164487228706223",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164487228706223.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164487228706223_0",
+    "bbox_xyxy": [
+     240.5,
+     106.8,
+     312.1,
+     307.7
+    ],
+    "confidence": 0.8783,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164487250114547",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164487250114547.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164487250114547_0",
+    "bbox_xyxy": [
+     238.7,
+     101.2,
+     307.3,
+     308.8
+    ],
+    "confidence": 0.8796,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164487250114547_1",
+    "bbox_xyxy": [
+     341.5,
+     109.4,
+     359.2,
+     139.8
+    ],
+    "confidence": 0.2654,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164487675369230",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164487675369230.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164487675369230_0",
+    "bbox_xyxy": [
+     231.7,
+     102.9,
+     293.0,
+     306.2
+    ],
+    "confidence": 0.8858,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164487675369230_1",
+    "bbox_xyxy": [
+     357.4,
+     110.0,
+     374.4,
+     140.3
+    ],
+    "confidence": 0.4915,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164487705105733",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164487705105733.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164487705105733_0",
+    "bbox_xyxy": [
+     224.5,
+     104.4,
+     284.3,
+     309.7
+    ],
+    "confidence": 0.8639,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164487705105733_1",
+    "bbox_xyxy": [
+     359.0,
+     114.7,
+     376.1,
+     144.3
+    ],
+    "confidence": 0.5399,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164487705105733_2",
+    "bbox_xyxy": [
+     210.2,
+     89.8,
+     228.9,
+     129.1
+    ],
+    "confidence": 0.4479,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164488165496376",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164488165496376.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164488165496376_0",
+    "bbox_xyxy": [
+     220.4,
+     104.3,
+     281.3,
+     308.9
+    ],
+    "confidence": 0.8886,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164488165496376_1",
+    "bbox_xyxy": [
+     391.7,
+     125.8,
+     408.9,
+     156.9
+    ],
+    "confidence": 0.6351,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164488165496376_2",
+    "bbox_xyxy": [
+     18.8,
+     71.5,
+     40.8,
+     118.3
+    ],
+    "confidence": 0.5281,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164488165496376_3",
+    "bbox_xyxy": [
+     14.5,
+     75.5,
+     27.6,
+     111.8
+    ],
+    "confidence": 0.4917,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164488196923753",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164488196923753.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164488196923753_0",
+    "bbox_xyxy": [
+     222.8,
+     96.8,
+     286.4,
+     299.6
+    ],
+    "confidence": 0.8781,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164488196923753_1",
+    "bbox_xyxy": [
+     40.6,
+     64.7,
+     63.7,
+     112.8
+    ],
+    "confidence": 0.6348,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164488196923753_2",
+    "bbox_xyxy": [
+     404.1,
+     122.7,
+     424.4,
+     151.9
+    ],
+    "confidence": 0.3395,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164488644751093",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164488644751093.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164488644751093_0",
+    "bbox_xyxy": [
+     227.9,
+     96.9,
+     295.6,
+     292.9
+    ],
+    "confidence": 0.8862,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164488644751093_1",
+    "bbox_xyxy": [
+     439.7,
+     125.5,
+     460.1,
+     159.3
+    ],
+    "confidence": 0.7427,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164488644751093_2",
+    "bbox_xyxy": [
+     101.9,
+     75.2,
+     120.8,
+     116.0
+    ],
+    "confidence": 0.6251,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164488644751093_3",
+    "bbox_xyxy": [
+     295.4,
+     99.9,
+     312.4,
+     134.0
+    ],
+    "confidence": 0.5436,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164489096204360",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164489096204360.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164489096204360_0",
+    "bbox_xyxy": [
+     216.0,
+     96.5,
+     293.9,
+     294.8
+    ],
+    "confidence": 0.9096,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164489096204360_1",
+    "bbox_xyxy": [
+     474.6,
+     133.1,
+     496.4,
+     167.5
+    ],
+    "confidence": 0.3383,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164489096204360_2",
+    "bbox_xyxy": [
+     322.1,
+     101.1,
+     341.1,
+     137.0
+    ],
+    "confidence": 0.3218,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164489128163460",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164489128163460.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164489128163460_0",
+    "bbox_xyxy": [
+     206.4,
+     100.0,
+     289.0,
+     301.2
+    ],
+    "confidence": 0.9198,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164489128163460_1",
+    "bbox_xyxy": [
+     474.5,
+     137.0,
+     498.0,
+     173.2
+    ],
+    "confidence": 0.3517,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164489602382610",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164489602382610.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164489602382610_0",
+    "bbox_xyxy": [
+     214.9,
+     109.2,
+     302.0,
+     312.3
+    ],
+    "confidence": 0.9309,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164489602382610_1",
+    "bbox_xyxy": [
+     529.7,
+     154.3,
+     559.3,
+     193.8
+    ],
+    "confidence": 0.8105,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164489602382610_2",
+    "bbox_xyxy": [
+     194.5,
+     102.5,
+     211.3,
+     135.6
+    ],
+    "confidence": 0.691,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164489642344395",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164489642344395.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164489642344395_0",
+    "bbox_xyxy": [
+     214.5,
+     103.4,
+     302.7,
+     307.9
+    ],
+    "confidence": 0.9154,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164489664315612",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164489664315612.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164489664315612_0",
+    "bbox_xyxy": [
+     230.0,
+     97.3,
+     316.0,
+     295.3
+    ],
+    "confidence": 0.9288,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164489664315612_1",
+    "bbox_xyxy": [
+     592.0,
+     162.3,
+     633.2,
+     207.7
+    ],
+    "confidence": 0.5477,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164490119192529",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164490119192529.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164490119192529_0",
+    "bbox_xyxy": [
+     229.1,
+     93.9,
+     316.9,
+     293.5
+    ],
+    "confidence": 0.9317,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164490119192529_1",
+    "bbox_xyxy": [
+     414.2,
+     116.1,
+     433.9,
+     153.6
+    ],
+    "confidence": 0.6762,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164490119192529_2",
+    "bbox_xyxy": [
+     607.6,
+     157.2,
+     640.0,
+     205.6
+    ],
+    "confidence": 0.5405,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164490139583991",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164490139583991.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164490139583991_0",
+    "bbox_xyxy": [
+     232.9,
+     97.4,
+     330.6,
+     305.6
+    ],
+    "confidence": 0.9281,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164490139583991_1",
+    "bbox_xyxy": [
+     454.8,
+     127.6,
+     480.0,
+     168.1
+    ],
+    "confidence": 0.7077,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164490139583991_2",
+    "bbox_xyxy": [
+     17.2,
+     60.4,
+     37.9,
+     107.5
+    ],
+    "confidence": 0.522,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164490611981183",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164490611981183.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164490611981183_0",
+    "bbox_xyxy": [
+     226.2,
+     109.7,
+     329.7,
+     320.7
+    ],
+    "confidence": 0.9231,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164490611981183_1",
+    "bbox_xyxy": [
+     497.0,
+     146.8,
+     528.6,
+     191.2
+    ],
+    "confidence": 0.4289,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164490611981183_2",
+    "bbox_xyxy": [
+     91.9,
+     84.7,
+     105.8,
+     118.9
+    ],
+    "confidence": 0.2556,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164491059956811",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164491059956811.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164491059956811_0",
+    "bbox_xyxy": [
+     232.5,
+     106.7,
+     331.1,
+     319.0
+    ],
+    "confidence": 0.9306,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164491059956811_1",
+    "bbox_xyxy": [
+     511.5,
+     147.3,
+     542.7,
+     193.0
+    ],
+    "confidence": 0.3369,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164491059956811_2",
+    "bbox_xyxy": [
+     512.6,
+     170.8,
+     530.3,
+     194.0
+    ],
+    "confidence": 0.2756,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164491495515300",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164491495515300.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164491495515300_0",
+    "bbox_xyxy": [
+     229.9,
+     97.7,
+     326.0,
+     308.5
+    ],
+    "confidence": 0.9243,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164491521357657",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164491521357657.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164491521357657_0",
+    "bbox_xyxy": [
+     229.1,
+     97.1,
+     330.3,
+     308.9
+    ],
+    "confidence": 0.9348,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164491521357657_1",
+    "bbox_xyxy": [
+     546.3,
+     179.8,
+     568.0,
+     204.1
+    ],
+    "confidence": 0.2953,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164491956940713",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164491956940713.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164491956940713_0",
+    "bbox_xyxy": [
+     221.6,
+     97.1,
+     320.4,
+     311.1
+    ],
+    "confidence": 0.9169,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164491956940713_1",
+    "bbox_xyxy": [
+     382.2,
+     122.0,
+     401.3,
+     153.0
+    ],
+    "confidence": 0.3644,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164491984161704",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164491984161704.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164491984161704_0",
+    "bbox_xyxy": [
+     217.7,
+     98.4,
+     317.7,
+     310.9
+    ],
+    "confidence": 0.91,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164491984161704_1",
+    "bbox_xyxy": [
+     383.3,
+     122.3,
+     401.5,
+     151.4
+    ],
+    "confidence": 0.5576,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164492481546065",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164492481546065.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164492481546065_0",
+    "bbox_xyxy": [
+     231.8,
+     98.3,
+     326.5,
+     313.0
+    ],
+    "confidence": 0.9192,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164492481546065_1",
+    "bbox_xyxy": [
+     420.7,
+     131.6,
+     442.2,
+     164.3
+    ],
+    "confidence": 0.445,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164492506734638",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164492506734638.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164492506734638_0",
+    "bbox_xyxy": [
+     234.2,
+     92.3,
+     326.3,
+     310.0
+    ],
+    "confidence": 0.9003,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164492506734638_1",
+    "bbox_xyxy": [
+     427.9,
+     132.6,
+     450.2,
+     165.9
+    ],
+    "confidence": 0.6444,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164492911462544",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164492911462544.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164492911462544_0",
+    "bbox_xyxy": [
+     251.9,
+     88.6,
+     339.7,
+     300.1
+    ],
+    "confidence": 0.8674,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164492911462544_1",
+    "bbox_xyxy": [
+     461.6,
+     128.4,
+     490.9,
+     165.0
+    ],
+    "confidence": 0.4965,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164493405777501",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164493405777501.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164493405777501_0",
+    "bbox_xyxy": [
+     249.5,
+     79.9,
+     331.4,
+     299.6
+    ],
+    "confidence": 0.6722,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164493405777501_1",
+    "bbox_xyxy": [
+     494.7,
+     124.3,
+     524.5,
+     166.7
+    ],
+    "confidence": 0.4932,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164493435302614",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164493435302614.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164493435302614_0",
+    "bbox_xyxy": [
+     489.9,
+     129.1,
+     520.5,
+     171.4
+    ],
+    "confidence": 0.7773,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164493435302614_1",
+    "bbox_xyxy": [
+     251.7,
+     122.1,
+     316.7,
+     304.4
+    ],
+    "confidence": 0.4308,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164493943785809",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164493943785809.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164493943785809_0",
+    "bbox_xyxy": [
+     179.7,
+     133.0,
+     256.4,
+     318.3
+    ],
+    "confidence": 0.4837,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164493943785809_1",
+    "bbox_xyxy": [
+     450.2,
+     116.4,
+     478.9,
+     159.2
+    ],
+    "confidence": 0.2744,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164493961026410",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164493961026410.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164493961026410_0",
+    "bbox_xyxy": [
+     430.1,
+     124.1,
+     452.5,
+     160.6
+    ],
+    "confidence": 0.6547,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164493961026410_1",
+    "bbox_xyxy": [
+     145.0,
+     141.0,
+     229.4,
+     326.1
+    ],
+    "confidence": 0.5796,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164493980923168",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164493980923168.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164493980923168_0",
+    "bbox_xyxy": [
+     0.0,
+     159.9,
+     118.0,
+     374.7
+    ],
+    "confidence": 0.9493,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164493980923168_1",
+    "bbox_xyxy": [
+     338.4,
+     121.5,
+     359.7,
+     161.1
+    ],
+    "confidence": 0.5408,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164494430280740",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164494430280740.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164494430280740_0",
+    "bbox_xyxy": [
+     0.0,
+     168.4,
+     55.5,
+     399.6
+    ],
+    "confidence": 0.7763,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164494430280740_1",
+    "bbox_xyxy": [
+     496.1,
+     202.1,
+     517.7,
+     230.2
+    ],
+    "confidence": 0.4619,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164494430280740_2",
+    "bbox_xyxy": [
+     296.0,
+     118.4,
+     313.7,
+     157.1
+    ],
+    "confidence": 0.3576,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164494486233573",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164494486233573.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164494486233573_0",
+    "bbox_xyxy": [
+     336.8,
+     164.5,
+     365.4,
+     231.3
+    ],
+    "confidence": 0.8334,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164494486233573_1",
+    "bbox_xyxy": [
+     114.0,
+     145.1,
+     136.8,
+     192.4
+    ],
+    "confidence": 0.8119,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164494486233573_2",
+    "bbox_xyxy": [
+     154.9,
+     171.6,
+     178.2,
+     213.9
+    ],
+    "confidence": 0.3896,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164494933146219",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164494933146219.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164494933146219_0",
+    "bbox_xyxy": [
+     334.7,
+     170.8,
+     363.8,
+     240.1
+    ],
+    "confidence": 0.865,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164494933146219_1",
+    "bbox_xyxy": [
+     85.2,
+     147.8,
+     108.2,
+     198.2
+    ],
+    "confidence": 0.7577,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164494961457849",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164494961457849.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164494961457849_0",
+    "bbox_xyxy": [
+     338.6,
+     168.6,
+     370.3,
+     238.9
+    ],
+    "confidence": 0.8497,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164494961457849_1",
+    "bbox_xyxy": [
+     82.5,
+     149.4,
+     108.3,
+     200.2
+    ],
+    "confidence": 0.8166,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164495398834068",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164495398834068.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164495398834068_0",
+    "bbox_xyxy": [
+     345.2,
+     172.8,
+     377.0,
+     243.2
+    ],
+    "confidence": 0.853,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164495398834068_1",
+    "bbox_xyxy": [
+     86.5,
+     151.7,
+     110.0,
+     203.8
+    ],
+    "confidence": 0.7868,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164495420412991",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164495420412991.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164495420412991_0",
+    "bbox_xyxy": [
+     358.8,
+     184.2,
+     394.4,
+     260.8
+    ],
+    "confidence": 0.8672,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164495420412991_1",
+    "bbox_xyxy": [
+     80.1,
+     161.8,
+     105.3,
+     217.1
+    ],
+    "confidence": 0.724,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164495842831821",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164495842831821.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164495842831821_0",
+    "bbox_xyxy": [
+     367.1,
+     184.0,
+     403.9,
+     262.3
+    ],
+    "confidence": 0.8119,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164495842831821_1",
+    "bbox_xyxy": [
+     80.7,
+     159.3,
+     107.9,
+     216.1
+    ],
+    "confidence": 0.7543,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164495861849308",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164495861849308.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164495861849308_0",
+    "bbox_xyxy": [
+     379.6,
+     185.4,
+     418.6,
+     267.8
+    ],
+    "confidence": 0.8013,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164495861849308_1",
+    "bbox_xyxy": [
+     90.4,
+     163.7,
+     116.6,
+     221.3
+    ],
+    "confidence": 0.793,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164496326597728",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164496326597728.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164496326597728_0",
+    "bbox_xyxy": [
+     458.1,
+     203.3,
+     514.8,
+     295.3
+    ],
+    "confidence": 0.8693,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164496326597728_1",
+    "bbox_xyxy": [
+     152.3,
+     156.0,
+     178.3,
+     209.6
+    ],
+    "confidence": 0.7812,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164496345041761",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164496345041761.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164496345041761_0",
+    "bbox_xyxy": [
+     478.4,
+     209.1,
+     539.5,
+     306.2
+    ],
+    "confidence": 0.8834,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164496345041761_1",
+    "bbox_xyxy": [
+     160.6,
+     157.0,
+     190.6,
+     212.3
+    ],
+    "confidence": 0.8244,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164496755447998",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164496755447998.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164496755447998_0",
+    "bbox_xyxy": [
+     540.0,
+     221.0,
+     622.1,
+     327.1
+    ],
+    "confidence": 0.895,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164496755447998_1",
+    "bbox_xyxy": [
+     183.5,
+     159.9,
+     213.0,
+     218.8
+    ],
+    "confidence": 0.7717,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164496786698027",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164496786698027.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164496786698027_0",
+    "bbox_xyxy": [
+     197.4,
+     164.6,
+     223.7,
+     224.0
+    ],
+    "confidence": 0.7082,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164497263736130",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164497263736130.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164497263736130_0",
+    "bbox_xyxy": [
+     267.2,
+     176.3,
+     301.5,
+     240.2
+    ],
+    "confidence": 0.8146,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164497280011508",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164497280011508.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164497280011508_0",
+    "bbox_xyxy": [
+     357.9,
+     195.4,
+     401.8,
+     263.7
+    ],
+    "confidence": 0.7988,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164497753643947",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164497753643947.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164497753643947_0",
+    "bbox_xyxy": [
+     390.9,
+     204.9,
+     440.9,
+     280.5
+    ],
+    "confidence": 0.8073,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164497753643947_1",
+    "bbox_xyxy": [
+     0.0,
+     154.4,
+     11.9,
+     209.0
+    ],
+    "confidence": 0.2789,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164497779347791",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164497779347791.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164497779347791_0",
+    "bbox_xyxy": [
+     491.4,
+     229.7,
+     559.3,
+     315.2
+    ],
+    "confidence": 0.8571,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164497779347791_1",
+    "bbox_xyxy": [
+     91.5,
+     146.1,
+     116.2,
+     204.7
+    ],
+    "confidence": 0.6948,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164498181626591",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164498181626591.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164498181626591_0",
+    "bbox_xyxy": [
+     528.8,
+     245.9,
+     601.2,
+     336.8
+    ],
+    "confidence": 0.8483,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164498181626591_1",
+    "bbox_xyxy": [
+     112.4,
+     149.1,
+     138.3,
+     209.5
+    ],
+    "confidence": 0.7357,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164498198341928",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164498198341928.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164498198341928_0",
+    "bbox_xyxy": [
+     559.0,
+     254.7,
+     639.9,
+     350.2
+    ],
+    "confidence": 0.8381,
+    "class": "extinguisher"
+   },
+   {
+    "det_id": "camera_color_image_1727164498198341928_1",
+    "bbox_xyxy": [
+     126.1,
+     156.8,
+     150.5,
+     217.5
+    ],
+    "confidence": 0.7787,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164498631667599",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164498631667599.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164498631667599_0",
+    "bbox_xyxy": [
+     174.2,
+     167.0,
+     197.3,
+     231.5
+    ],
+    "confidence": 0.7397,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164498653006249",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164498653006249.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164498653006249_0",
+    "bbox_xyxy": [
+     193.2,
+     168.1,
+     217.7,
+     230.2
+    ],
+    "confidence": 0.7384,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164499127243202",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164499127243202.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164499127243202_0",
+    "bbox_xyxy": [
+     264.0,
+     172.8,
+     290.8,
+     240.3
+    ],
+    "confidence": 0.8357,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164499571001068",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164499571001068.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164499571001068_0",
+    "bbox_xyxy": [
+     293.3,
+     177.2,
+     322.4,
+     247.2
+    ],
+    "confidence": 0.8064,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164499598482478",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164499598482478.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164499598482478_0",
+    "bbox_xyxy": [
+     302.9,
+     180.5,
+     331.0,
+     249.1
+    ],
+    "confidence": 0.7971,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164499978108199",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164499978108199.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164499978108199_0",
+    "bbox_xyxy": [
+     300.7,
+     183.7,
+     329.5,
+     254.9
+    ],
+    "confidence": 0.8231,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164500441100775",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164500441100775.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164500441100775_0",
+    "bbox_xyxy": [
+     296.4,
+     172.9,
+     325.1,
+     235.3
+    ],
+    "confidence": 0.6944,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164500472787296",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164500472787296.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164500472787296_0",
+    "bbox_xyxy": [
+     294.7,
+     170.1,
+     321.6,
+     241.9
+    ],
+    "confidence": 0.719,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164500907673583",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164500907673583.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164500907673583_0",
+    "bbox_xyxy": [
+     289.2,
+     176.6,
+     319.9,
+     250.4
+    ],
+    "confidence": 0.7535,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164500934329754",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164500934329754.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164500934329754_0",
+    "bbox_xyxy": [
+     288.8,
+     173.5,
+     319.0,
+     247.4
+    ],
+    "confidence": 0.7761,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164501404887591",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164501404887591.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164501404887591_0",
+    "bbox_xyxy": [
+     296.6,
+     174.5,
+     325.9,
+     250.5
+    ],
+    "confidence": 0.6444,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164501433802487",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164501433802487.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164501433802487_0",
+    "bbox_xyxy": [
+     294.3,
+     172.6,
+     324.8,
+     253.8
+    ],
+    "confidence": 0.7498,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164501452269633",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164501452269633.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164501452269633_0",
+    "bbox_xyxy": [
+     272.8,
+     177.4,
+     304.0,
+     253.0
+    ],
+    "confidence": 0.7982,
+    "class": "extinguisher"
+   }
+  ]
+ },
+ {
+  "image_id": "camera_color_image_1727164501903281197",
+  "image_path": "/content/drive/MyDrive/r7020e_data/test/camera_color_image_1727164501903281197.png",
+  "detections": [
+   {
+    "det_id": "camera_color_image_1727164501903281197_0",
+    "bbox_xyxy": [
+     269.6,
+     175.0,
+     296.7,
+     251.4
+    ],
+    "confidence": 0.7312,
+    "class": "extinguisher"
+   }
+  ]
+ }
+]

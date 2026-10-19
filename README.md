@@ -1,0 +1,39 @@
+# R7020E Project 1 - Fire-extinguisher detection, decoy rejection, 3D localization
+
+Team of 3, one module each:
+- Module 1 - detection (done): `src/train_detector.py`, `src/infer_detector.py`, `src/infer_colab.py`
+- Module 2 - real vs decoy filtering: `src/decoy_filter.py` (TODO)
+- Module 3 - 3D localization, baseline and evaluation: `src/localize_3d.py`, `src/evaluate.py` (TODO)
+
+## Data contract (each module reads the previous JSON and adds fields)
+1. `outputs/detections_{eval,test}.json` - Module 1: `image_id`, `image_path`, `detections[{det_id, bbox_xyxy, confidence, class}]`
+2. `outputs/filtered.json` - Module 2 adds `is_real` (bool) and `decoy_score` (float) per detection
+3. `outputs/localized.json` - Module 3 adds `position_3d {x, y, z, unit: "m", frame: "camera"}` for accepted real detections
+
+Image ids are the timestamp in the file name (`camera_color_image_<ns>.png`); depth frames are matched to colour frames by nearest timestamp.
+
+## Module 1 - detector
+- Model: YOLO26s (Ultralytics), COCO-pretrained, fine-tuned on the Roboflow fire-extinguisher set (1 class `extinguisher`)
+- Validation (328 images, 606 instances): P 0.927, R 0.901, mAP50 0.948, mAP50-95 0.790
+- Comparison model: YOLOv8s (mAP50 0.947, mAP50-95 0.771)
+- Training: 50 epochs max, imgsz 640, batch 16, patience 15, Tesla T4
+- Inference settings: conf 0.25, NMS iou 0.45, imgsz 640
+- Recordings: `eval` = 127 colour frames, `test` = 88 colour frames (same file layout as the course data)
+- Output on our data: eval 301 detections, test 150 detections (before decoy filtering)
+- Known limitation: sometimes two boxes on one real extinguisher (horn+body vs body only); to be merged in Module 2
+
+## Reproduce
+Training (final model; the Roboflow set exported as YOLOv8 format, `data/fire_extinguisher.yaml` pointing to its train/valid folders):
+```
+python src/train_detector.py --data data/fire_extinguisher.yaml --model yolo26s.pt --epochs 50 --imgsz 640 --batch 16 --patience 15 --name fire_ext_26s
+```
+Inference (only the colour frames `camera_color_image_*.png` are read; depth/IR files are ignored):
+```
+pip install -r requirements.txt
+# put weights in models/best.pt and the colour frames in data/eval and data/test
+python src/infer_colab.py
+```
+Software: ultralytics 8.4.182, Python 3.13 (Colab), torch 2.11 (CUDA), GPU Tesla T4.
+
+## Data (not in the repo)
+Training set: Roboflow "FireExtinguisher v1" (YOLOv8 export). Eval/test recordings: course OneDrive link (rosbag + raw sensor folders).
