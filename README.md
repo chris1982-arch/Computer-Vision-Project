@@ -50,7 +50,7 @@ pip install -r requirements.txt
 # put weights in models/best.pt and the colour frames in data/eval and data/test
 python src/infer_colab.py
 ```
-Software: ultralytics 8.4.182, Python 3.13 (Colab), torch 2.11 (CUDA), GPU Tesla T4.
+Software: ultralytics 8.4.182, Python 3.13.15 (Colab), torch 2.11.0+cu130, GPU Tesla T4.
 
 ## Data (not in the repo)
 Training set: Roboflow "FireExtinguisher v1" (YOLOv8 export). Eval/test recordings: course OneDrive link (rosbag + raw sensor folders).
