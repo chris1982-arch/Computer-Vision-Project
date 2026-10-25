@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['decoy', 'real']
+
+roboflow:
+  workspace: vaishnavis-workspace-likpo
+  project: fire-extinguisher-real-decoy
+  version: 1
+  license: Private
+  url: https://app.roboflow.com/vaishnavis-workspace-likpo/fire-extinguisher-real-decoy/1
