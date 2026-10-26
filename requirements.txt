@@ -1,8 +1,8 @@
 ultralytics==8.4.182   # YOLO training/inference (version used in all our runs)
-opencv-python
-numpy
-matplotlib
-pyyaml
+opencv-python==5.0.0.93
+numpy==2.5.4
+matplotlib==3.11.2
+pyyaml==6.0.3
 tqdm
-pandas
-scikit-learn
+pandas==3.1.0
+scikit-learn==1.9.1
