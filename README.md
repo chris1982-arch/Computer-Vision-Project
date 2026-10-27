@@ -2,12 +2,12 @@
 
 Team of 3, one module each:
 - Module 1 - detection (done), Chris Palantzidis: `src/train_detector.py`, `src/infer_detector.py`, `src/infer_colab.py`
-- Module 2 - real vs decoy filtering, Rafal Popiolek: `src/decoy_filter.py` (TODO)
+- Module 2 - real vs decoy filtering, Rafal Popiolek: `src/decoy_filter.py`, `src/labels.py` (metric, shared with Module 3)
 - Module 3 - 3D localization, baseline and evaluation, Vaishnavi Dasari: `src/localize_3d.py`, `src/evaluate.py` (TODO)
 
 ## Data contract (each module reads the previous JSON and adds fields)
 1. `outputs/detections_{eval,test}.json` - Module 1: `image_id`, `image_path`, `detections[{det_id, bbox_xyxy, confidence, class}]`
-2. `outputs/filtered.json` - Module 2 adds `is_real` (bool) and `decoy_score` (float) per detection
+2. `outputs/filtered_{eval,test}.json` - Module 2 adds `is_real` (bool), `decoy_score` (0 real, 1 decoy), `flatness`, `height_m`, `z_med` (m) and `depth_gap_ms` per detection
 3. `outputs/localized.json` - Module 3 adds `position_3d {x, y, z, unit: "m", frame: "camera"}` for accepted real detections
 
 Image ids are the timestamp in the file name (`camera_color_image_<ns>.png`); depth frames are matched to colour frames by nearest timestamp (117 depth frames for 215 colour frames, so record the time gap and reject matches that are too far apart).
@@ -17,7 +17,8 @@ Drawn by hand in Roboflow, YOLO format, one `.txt` per image: `class x_center y_
 - Class ids: **0 = decoy, 1 = real** (always map by class name from `data.yaml`, not by number; ids depend on the Roboflow project)
 - File names end with `.rf.<hash>` (added by Roboflow); the image name is the part before `.rf.`
 - `labels/chris_test/` - test recording, 88 frames (Chris)
-- eval recording, 127 frames: first 64 frames (Rafal), last 63 frames (Vaishnavi) - to be added under `labels/`
+- `labels/eval_first64/` - eval recording, first 64 frames (Rafal): 64 real, 109 decoy
+- `labels/eval_last63/` - eval recording, last 63 frames (Vaishnavi): 63 real, 117 decoy
 
 ## Evaluation protocol
 - `test` recording = development set (our choice; tune thresholds here); `eval` recording = final measurement (run once)
@@ -25,7 +26,7 @@ Drawn by hand in Roboflow, YOLO format, one `.txt` per image: `class x_center y_
 - Real-object TPR = real objects detected and accepted as real / all real objects (target 0.75 or more)
 - Decoy FPR = decoys detected and accepted as real / all decoys (target 0.15 or less)
 - Baseline: detector without decoy filtering (every detection is real); Z from the median depth in the box, x and y from the box centre pixel and the camera intrinsics; same data and metrics
-- Detector confidence threshold 0.25; decoy-rejection threshold: [to be filled by Module 2]
+- Detector confidence threshold 0.25; decoy-rejection rule: real when flatness > 5 and height > 0.7 m (Module 2)
 - 3D position: camera frame, metres
 
 ## Module 1 - detector
@@ -38,6 +39,37 @@ Drawn by hand in Roboflow, YOLO format, one `.txt` per image: `class x_center y_
 - Output on our data: eval 301 detections, test 150 detections (before decoy filtering)
 - Known limitation: sometimes two boxes on one real extinguisher (horn+body vs body only); to be merged in Module 2
 - Validation numbers are on the public dataset, not on our recordings. Leakage check: no source image name and no identical file is in both train and validation; the 328 validation files come from 207 source names
+
+## Module 2 - real vs decoy filter
+A print is flat and small; a real extinguisher (cylinder + hose) is not flat and about 1 m tall in its box. Depth images are registered to the colour camera (same K, uint16 mm), so a colour box indexes the depth image directly.
+- Duplicate boxes: a box more than 80 % inside a more confident box is dropped.
+- Depth frame: nearest by timestamp, used if at most 100 ms away.
+- Inside the box (15 % / 10 % edges trimmed, depth 0.2-8 m): `flatness` = RMS distance of the 3D points to their best-fit plane (mm) / median z^2 (m^2); `height_m` = box height (px) * median z / fy.
+- Rule (thresholds chosen on the test recording): real when `flatness > 5` and `height_m > 0.7`. Without usable depth: confidence >= 0.85.
+
+Dev results (test recording, 88 frames, 57 real, 138 decoys; `src/labels.py` metric):
+
+| System | TPR (real) | FPR (decoy) | Accepted real | Missed real | Accepted decoys |
+|---|---|---|---|---|---|
+| Baseline (no filter) | 1.000 | 0.638 | 57 | 0 | 88 |
+| Depth filter | 0.965 | 0.022 | 55 | 2 | 3 |
+
+Final results (eval recording, 127 frames, 127 real, 226 decoys; thresholds frozen from dev, run once):
+
+| System | TPR (real) | FPR (decoy) | Accepted real | Missed real | Accepted decoys |
+|---|---|---|---|---|---|
+| Baseline (no filter) | 0.953 | 0.743 | 121 | 6 | 168 |
+| Depth filter | 0.858 | 0.000 | 109 | 18 | 0 |
+
+On eval the detector itself misses 6 real objects; the filter rejects 12 more. Both targets are met (TPR >= 0.75, FPR <= 0.15).
+
+Known failure: when the camera turns fast, the matched depth frame (up to ~65 ms away) shows the object elsewhere, so a real extinguisher can be rejected.
+
+Run (recordings extracted to `data/raw/{eval,test}/`; numpy 2.5.4, opencv-python 5.0.0, Python 3.12):
+```
+make         # test with TPR/FPR, then eval
+make score   # final eval TPR/FPR, needs labels/eval_first64 and labels/eval_last63
+```
 
 ## Reproduce
 Training (final model; the Roboflow set exported as YOLOv8 format, `data/fire_extinguisher.yaml` pointing to its train/valid folders):
