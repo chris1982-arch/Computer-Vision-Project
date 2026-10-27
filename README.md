@@ -17,7 +17,8 @@ Drawn by hand in Roboflow, YOLO format, one `.txt` per image: `class x_center y_
 - Class ids: **0 = decoy, 1 = real** (always map by class name from `data.yaml`, not by number; ids depend on the Roboflow project)
 - File names end with `.rf.<hash>` (added by Roboflow); the image name is the part before `.rf.`
 - `labels/chris_test/` - test recording, 88 frames (Chris)
-- eval recording, 127 frames: first 64 frames (Rafal), last 63 frames (Vaishnavi) - to be added under `labels/`
+- `labels/eval_first64/` - eval recording, first 64 frames (Rafal): 64 real, 109 decoy
+- `labels/eval_last63/` - eval recording, last 63 frames (Vaishnavi): 63 real, 117 decoy
 
 ## Evaluation protocol
 - `test` recording = development set (our choice; tune thresholds here); `eval` recording = final measurement (run once)
@@ -52,6 +53,15 @@ Dev results (test recording, 88 frames, 57 real, 138 decoys; `src/labels.py` met
 |---|---|---|---|---|---|
 | Baseline (no filter) | 1.000 | 0.638 | 57 | 0 | 88 |
 | Depth filter | 0.965 | 0.022 | 55 | 2 | 3 |
+
+Final results (eval recording, 127 frames, 127 real, 226 decoys; thresholds frozen from dev, run once):
+
+| System | TPR (real) | FPR (decoy) | Accepted real | Missed real | Accepted decoys |
+|---|---|---|---|---|---|
+| Baseline (no filter) | 0.953 | 0.743 | 121 | 6 | 168 |
+| Depth filter | 0.858 | 0.000 | 109 | 18 | 0 |
+
+On eval the detector itself misses 6 real objects; the filter rejects 12 more. Both targets are met (TPR >= 0.75, FPR <= 0.15).
 
 Known failure: when the camera turns fast, the matched depth frame (up to ~65 ms away) shows the object elsewhere, so a real extinguisher can be rejected.
 

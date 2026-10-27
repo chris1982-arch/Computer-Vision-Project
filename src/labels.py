@@ -10,7 +10,9 @@ import argparse
 import json
 from pathlib import Path
 
-NAMES = ["decoy", "real"]   # class ids in our Roboflow export (labels/chris_test/data.yaml)
+import yaml
+
+NAMES = ["decoy", "real"]   # class ids when a label folder has no data.yaml
 
 
 def load_labels(dirs, W=640, H=400):
@@ -19,12 +21,21 @@ def load_labels(dirs, W=640, H=400):
     for d in map(Path, dirs):
         if not d.is_dir():
             raise FileNotFoundError(f"label folder {d} not found")
+        names = NAMES
+        if (d / "data.yaml").exists():   # map ids by class name: other Roboflow projects may differ
+            names = yaml.safe_load((d / "data.yaml").read_text())["names"]
+            names = [{"real": "real", "decoy": "decoy"}.get(str(n).lower()) for n in names]
+            if None in names:
+                raise ValueError(f"{d}/data.yaml: class names must be 'real' and 'decoy'")
         for f in d.glob("camera_color_image_*.txt"):
+            image_id = f.name.split("_png.rf.")[0]
+            if image_id in out:
+                raise ValueError(f"{image_id} labelled twice (augmented export or overlapping folders?)")
             objs = []
             for c, xc, yc, w, h in (line.split() for line in f.read_text().splitlines() if line.strip()):
                 xc, yc, w, h = float(xc) * W, float(yc) * H, float(w) * W, float(h) * H
-                objs.append((NAMES[int(c)], [xc - w / 2, yc - h / 2, xc + w / 2, yc + h / 2]))
-            out[f.name.split("_png.rf.")[0]] = objs
+                objs.append((names[int(c)], [xc - w / 2, yc - h / 2, xc + w / 2, yc + h / 2]))
+            out[image_id] = objs
     return out
 
 

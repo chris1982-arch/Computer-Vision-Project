@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['decoy', 'real']
+
+roboflow:
+  workspace: rafals-workspace-rnj5i
+  project: fire_extinguishers_label
+  version: 1
+  license: Private
+  url: https://app.roboflow.com/rafals-workspace-rnj5i/fire_extinguishers_label/1
