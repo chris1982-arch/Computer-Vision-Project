@@ -1,101 +1,112 @@
 # R7020E Project 1 - Fire-extinguisher detection, decoy rejection, 3D localization
 
 Team of 3, one module each:
-- Module 1 - detection (done), Chris Palantzidis: `src/train_detector.py`, `src/infer_detector.py`, `src/infer_colab.py`
-- Module 2 - real vs decoy filtering, Rafal Popiolek: `src/decoy_filter.py`, `src/labels.py` (metric, shared with Module 3)
-- Module 3 - 3D localization, baseline and evaluation, Vaishnavi Dasari: `src/localize_3d.py`, `src/evaluate.py`, `src/visualize_results.py`, `src/plot_3d_example.py`
 
-## Data contract (each module reads the previous JSON and adds fields)
+| Module | Owner | Files |
+|---|---|---|
+| 1 - detector | Chris Palantzidis | `src/train_detector.py`, `src/infer_detector.py`, `src/infer_colab.py`, `src/count_detections.py`, notebook `Computer_Vision_Project (1).ipynb` |
+| 2 - real vs decoy filter | Rafal Popiolek | `src/decoy_filter.py`, `src/labels.py` |
+| 3 - 3D localization, baseline, evaluation | Vaishnavi Dasari | `src/localize_3d.py`, `src/evaluate.py`, `src/visualize_results.py`, `src/plot_3d_example.py` |
+
+## Pipeline and data contract
+Each module reads the previous JSON and adds fields:
 1. `outputs/detections_{eval,test}.json` - Module 1: `image_id`, `image_path`, `detections[{det_id, bbox_xyxy, confidence, class}]`
-2. `outputs/filtered_{eval,test}.json` - Module 2 adds `is_real` (bool), `decoy_score` (0 real, 1 decoy), `flatness`, `height_m`, `z_med` (m) and `depth_gap_ms` per detection
-3. `outputs/localized_{eval,test}.json` - Module 3 adds `position_3d {x, y, z, unit: "m", frame: "camera_color_optical_frame"}` for accepted real detections (`null` for rejected ones) and `depth_image_id`, `color_depth_gap_ms` per frame
+2. `outputs/filtered_{eval,test}.json` - Module 2 adds `is_real`, `decoy_score`, `flatness`, `height_m`, `z_med` (m), `depth_gap_ms` per detection
+3. `outputs/localized_{eval,test}.json` - Module 3 adds `position_3d {x, y, z, unit: "m", frame: "camera"}` for accepted real detections
+4. `outputs/evaluation_{eval,test}.txt` - Module 3: baseline against final system
 
-Image ids are the timestamp in the file name (`camera_color_image_<ns>.png`); depth frames are matched to colour frames by nearest timestamp (117 depth frames for 215 colour frames, so record the time gap and reject matches that are too far apart).
+Image ids are the timestamp in the file name (`camera_color_image_<ns>.png`). Depth frames are matched to colour frames by the nearest timestamp, at most 100 ms apart (test: 48 depth frames for 88 colour frames, eval: 69 for 127; 117 for 215 in total).
 
 ## Labels (reference boxes, real vs decoy)
 Drawn by hand in Roboflow, YOLO format, one `.txt` per image: `class x_center y_center width height` (normalized 0-1).
-- Class ids: **0 = decoy, 1 = real** (always map by class name from `data.yaml`, not by number; ids depend on the Roboflow project)
-- File names end with `.rf.<hash>` (added by Roboflow); the image name is the part before `.rf.`
+- Class ids depend on the Roboflow project: always map by class name from each folder's `data.yaml` (`src/labels.py` does this and rejects frames labelled twice).
 - `labels/chris_test/` - test recording, 88 frames (Chris)
-- `labels/eval_first64/` - eval recording, first 64 frames (Rafal): 64 real, 109 decoy
-- `labels/eval_last63/` - eval recording, last 63 frames (Vaishnavi): 63 real, 117 decoy
+- `labels/eval_first64/` - eval recording, first 64 frames (Rafal): 64 real, 109 decoys; one box corrected real to decoy after export, noted in its README
+- `labels/eval_last63/` - eval recording, last 63 frames (Vaishnavi)
 
 ## Evaluation protocol
-- `test` recording = development set (our choice; tune thresholds here); `eval` recording = final measurement (run once)
-- A detection matches an annotated object when the centre of the predicted box lies inside the reference box
+- `test` recording = development set (thresholds tuned here); `eval` recording = final measurement (run once, thresholds frozen)
+- A detection matches an annotated object when the centre of the predicted box lies inside the reference box (`src/labels.py`)
 - Real-object TPR = real objects detected and accepted as real / all real objects (target 0.75 or more)
 - Decoy FPR = decoys detected and accepted as real / all decoys (target 0.15 or less)
-- Baseline: detector without decoy filtering (every detection is real); Z from the median depth in the box, x and y from the box centre pixel and the camera intrinsics; same data and metrics
-- Detector confidence threshold 0.25; decoy-rejection rule: real when flatness > 5 and height > 0.7 m (Module 2)
-- 3D position: camera frame, metres
+- Baseline: detector without decoy filtering (every detection is real), same data and metrics
+- Detector confidence threshold 0.25, NMS IoU 0.45
+- 3D position: camera frame (`camera_color_optical_frame`), X right, Y down, Z forward, metres
 
-## Module 1 - detector
-- Model: YOLO26s (Ultralytics), COCO-pretrained, fine-tuned on the Roboflow fire-extinguisher set (1 class `extinguisher`; 2934 train and 328 validation images, no Roboflow augmentation; Ultralytics training augmentations were used)
-- Validation (328 images, 606 instances): P 0.927, R 0.901, mAP50 0.948, mAP50-95 0.790
-- Comparison model: YOLOv8s (mAP50 0.947, mAP50-95 0.771)
-- Training: 50 epochs max, imgsz 640, batch 16, patience 15, Tesla T4
-- Inference settings: conf 0.25, NMS iou 0.45, imgsz 640
-- Recordings: `eval` = 127 colour frames, `test` = 88 colour frames (same file layout as the course data)
-- Output on our data: eval 301 detections, test 150 detections (before decoy filtering)
-- Known limitation: sometimes two boxes on one real extinguisher (horn+body vs body only); to be merged in Module 2
-- Validation numbers are on the public dataset, not on our recordings. Leakage check: no source image name and no identical file is in both train and validation; the 328 validation files come from 207 source names
+### Results
+Eval recording (127 frames, 127 real, 226 decoys), run once:
 
-## Module 2 - real vs decoy filter
-A print is flat and small; a real extinguisher (cylinder + hose) is not flat and about 1 m tall in its box. Depth images are registered to the colour camera (same K, uint16 mm), so a colour box indexes the depth image directly.
-- Duplicate boxes: a box more than 80 % inside a more confident box is dropped.
-- Depth frame: nearest by timestamp, used if at most 100 ms away.
-- Inside the box (15 % / 10 % edges trimmed, depth 0.2-8 m): `flatness` = RMS distance of the 3D points to their best-fit plane (mm) / median z^2 (m^2); `height_m` = box height (px) * median z / fy.
-- Rule (thresholds chosen on the test recording): real when `flatness > 5` and `height_m > 0.7`. Without usable depth: confidence >= 0.85.
-
-Dev results (test recording, 88 frames, 57 real, 138 decoys; `src/labels.py` metric):
-
-| System | TPR (real) | FPR (decoy) | Accepted real | Missed real | Accepted decoys |
-|---|---|---|---|---|---|
-| Baseline (no filter) | 1.000 | 0.638 | 57 | 0 | 88 |
-| Depth filter | 0.965 | 0.022 | 55 | 2 | 3 |
-
-Final results (eval recording, 127 frames, 127 real, 226 decoys; thresholds frozen from dev, run once):
-
-| System | TPR (real) | FPR (decoy) | Accepted real | Missed real | Accepted decoys |
+| System | TPR | FPR | Accepted real | Missed real | Accepted decoys |
 |---|---|---|---|---|---|
 | Baseline (no filter) | 0.953 | 0.743 | 121 | 6 | 168 |
-| Depth filter | 0.858 | 0.000 | 109 | 18 | 0 |
+| Final system (depth filter) | 0.858 | 0.000 | 109 | 18 | 0 |
 
-On eval the detector itself misses 6 real objects; the filter rejects 12 more. Both targets are met (TPR >= 0.75, FPR <= 0.15).
+Both targets are met by the final system; the baseline fails the FPR target. Of the 18 missed real objects, the detector misses 6 and the filter rejects 12.
 
-Known failure: when the camera turns fast, the matched depth frame (up to ~65 ms away) shows the object elsewhere, so a real extinguisher can be rejected.
+Dev recording, test (88 frames, 57 real, 138 decoys):
 
-Run (recordings extracted to `data/raw/{eval,test}/`; numpy 2.5.4, opencv-python 5.0.0, Python 3.12):
-```
-make         # test with TPR/FPR, then eval
-make score   # final eval TPR/FPR, needs labels/eval_first64 and labels/eval_last63
-```
+| System | TPR | FPR | Accepted real | Missed real | Accepted decoys |
+|---|---|---|---|---|---|
+| Baseline (no filter) | 1.000 | 0.638 | 57 | 0 | 88 |
+| Final system (depth filter) | 0.965 | 0.022 | 55 | 2 | 3 |
 
-## Module 3 - 3D localization and evaluation
-- 3D position: depth = median of the valid pixels in an 11 x 11 patch at the box centre (depth frame matched by timestamp, at most 100 ms away); X = (u - cx) * Z / fx, Y = (v - cy) * Z / fy. Camera frame `camera_color_optical_frame` (X right, Y down, Z forward), metres. Only detections accepted as real get a position.
-- Eval: all 115 accepted detections localized, Z 0.97-4.67 m (median 2.23 m).
-- `src/evaluate.py` compares the baseline (`detections_<split>.json`) and the final system (`filtered_<split>.json`) on the same labels with the `src/labels.py` metric and saves `outputs/evaluation_<split>.txt`; the numbers are the tables above.
-- Figures (`outputs/figures/`, not in the repo): TPR/FPR bar charts, 3D scatter of the positions, example frames (real accepted, decoys rejected, real missed) and one frame with its 3D position.
+There is no measured ground-truth 3D position, so the 3D examples are qualitative and no 3D error is reported.
 
-Run (after Module 2):
-```
-make localize   # outputs/localized_{test,eval}.json
-make evaluate   # outputs/evaluation_{test,eval}.txt
-make figures    # outputs/figures/
-```
+## Module 1 - detector (Chris)
+- Model: YOLO26s (Ultralytics), COCO-pretrained, fine-tuned on the Roboflow "FireExtinguisher" v1 set (1 class `extinguisher`); YOLOv8s trained for comparison
+- Data: 3262 images = 2934 train + 328 validation (606 instances), Roboflow export, no Roboflow augmentation (Ultralytics training augmentations were used, see the run's `args.yaml`); no shared source names or identical files between train and validation (the 328 validation files come from 207 source names)
+- Validation (public set, not our recordings): P 0.927, R 0.901, mAP50 0.948, mAP50-95 0.790 (YOLOv8s: mAP50 0.947, mAP50-95 0.771)
+- Training: 50 epochs, imgsz 640, batch 16, patience 15 (all 50 epochs ran), Tesla T4, about 51 minutes
+- Inference: conf 0.25, NMS iou 0.45, imgsz 640; on Tesla T4 7.5 ms inference per image, 49.3 ms per image including image loading (127 eval frames in 6.3 s)
+- Output on our data: eval 127 frames, 301 detections; test 88 frames, 150 detections (before decoy filtering); counts checked with `src/count_detections.py`
+- Known limitation: sometimes two boxes on one real extinguisher (horn plus body, body only); duplicate boxes are merged in Module 2
+
+## Module 2 - real vs decoy filter (Rafal)
+A printed decoy is flat and small; a real extinguisher (cylinder and hose) is not flat and about 1 m tall in its box. Depth is registered to the colour camera, so each detection box is measured directly in the depth image.
+- Duplicate boxes: a box more than 80 % inside a more confident box is dropped
+- Depth frame: nearest by timestamp, at most 100 ms away
+- Per box: plane-fit flatness (RMS mm / z squared) and physical box height from the depth image; the filter decides real or decoy from these (exact decision function in `src/decoy_filter.py`), thresholds chosen on the test recording and then frozen
+- Without usable depth: accepted when detector confidence is at least 0.85
+
+## Module 3 - 3D localization and evaluation (Vaishnavi)
+- `src/localize_3d.py`: 3D position of accepted real detections from the depth image inside the box and the camera intrinsics (`camera_info`), in the camera frame, metres
+- `src/evaluate.py`: baseline (every detection real) against the final system, TPR and FPR with the metric above
+- `src/visualize_results.py`, `src/plot_3d_example.py`: result figures and example frames
 
 ## Reproduce
-Training (final model; the Roboflow set exported as YOLOv8 format, `data/fire_extinguisher.yaml` pointing to its train/valid folders):
+Environment (Python 3 with the packages in `requirements.txt`):
+```
+python -m venv .venv
+.venv/bin/pip install -r requirements.txt
+```
+(On Windows use `.venv\Scripts\python`; or skip the venv and add `PY=python` to every `make` command.)
+
+Data (not in the repo): the course recordings (colour frames, depth frames, `camera_info`) in `data/test` and `data/eval`, in the original file layout.
+
+Modules 2 and 3 run from the saved Module 1 output in `outputs/detections_*.json` (no GPU needed):
+```
+make module2 score localize evaluate figures
+```
+- `make module2`: filter test (with TPR/FPR) and eval
+- `make score`: final eval TPR/FPR
+- `make localize`: 3D positions
+- `make evaluate`: baseline against final system -> `outputs/evaluation_{test,eval}.txt`
+- `make figures`: plots and example frames -> `outputs/figures/`
+
+Module 1 (only needed to recreate `outputs/detections_*.json`; the Roboflow set exported as YOLOv8 format, `data/fire_extinguisher.yaml` pointing to its train/valid folders):
 ```
 python src/train_detector.py --data data/fire_extinguisher.yaml --model yolo26s.pt --epochs 50 --imgsz 640 --batch 16 --patience 15 --name fire_ext_26s
-```
-Inference (only the colour frames `camera_color_image_*.png` are read; depth/IR files are ignored):
-```
-pip install -r requirements.txt
 # put weights in models/best.pt and the colour frames in data/eval and data/test
 python src/infer_colab.py
+python src/count_detections.py
 ```
-Software: ultralytics 8.4.182, Python 3.13.15 (Colab), torch 2.11.0+cu130, GPU Tesla T4.
+Software (Module 1): ultralytics 8.4.182, Python 3.13 (Colab), torch 2.11 (CUDA), GPU Tesla T4.
+
+## Contribution record
+- Chris: Module 1 (data, training, model comparison, inference, JSON, repo), labels for the test recording
+- Rafal: Module 2 (decoy filter, duplicate merging), labels for the first 64 eval frames, Makefile, demo video
+- Vaishnavi: Module 3 (3D localization, baseline, evaluation, figures), labels for the last 63 eval frames
+- Slides: each member wrote and presents the slides of their own module
 
 ## Data (not in the repo)
-Training set: Roboflow "FireExtinguisher" version 1 (YOLOv8 export). Eval/test recordings: course OneDrive link (rosbag + raw sensor folders).
+Training set: Roboflow "FireExtinguisher v1" (YOLOv8 export). Eval/test recordings: course OneDrive link (rosbag and raw sensor folders). Figures in `outputs/figures/` are generated, not stored.
