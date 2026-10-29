@@ -1,0 +1,19 @@
+Split: eval
+Baseline JSON: outputs/detections_eval.json
+Final JSON:    outputs/filtered_eval.json
+
+Evaluation results
+======================================================================================
+System                         Real accepted       TPR  Decoys accepted       FPR
+--------------------------------------------------------------------------------------
+Baseline (detector only)          121/127       0.953     168/226         0.743
+Final system (decoy filter)       109/127       0.858       0/226         0.000
+--------------------------------------------------------------------------------------
+Targets: TPR >= 0.750 and FPR <= 0.150
+Baseline (detector only): FAIL (TPR PASS, FPR FAIL)
+Final system (decoy filter): PASS (TPR PASS, FPR PASS)
+
+Counts:
+  Annotated real objects: 127; annotated decoys: 226
+  Baseline missed real objects: 6
+  Final missed/rejected real objects: 18
