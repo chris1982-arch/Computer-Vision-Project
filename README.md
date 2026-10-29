@@ -3,12 +3,12 @@
 Team of 3, one module each:
 - Module 1 - detection (done), Chris Palantzidis: `src/train_detector.py`, `src/infer_detector.py`, `src/infer_colab.py`
 - Module 2 - real vs decoy filtering, Rafal Popiolek: `src/decoy_filter.py`, `src/labels.py` (metric, shared with Module 3)
-- Module 3 - 3D localization, baseline and evaluation, Vaishnavi Dasari: `src/localize_3d.py`, `src/evaluate.py` (TODO)
+- Module 3 - 3D localization, baseline and evaluation, Vaishnavi Dasari: `src/localize_3d.py`, `src/evaluate.py`, `src/visualize_results.py`, `src/plot_3d_example.py`
 
 ## Data contract (each module reads the previous JSON and adds fields)
 1. `outputs/detections_{eval,test}.json` - Module 1: `image_id`, `image_path`, `detections[{det_id, bbox_xyxy, confidence, class}]`
 2. `outputs/filtered_{eval,test}.json` - Module 2 adds `is_real` (bool), `decoy_score` (0 real, 1 decoy), `flatness`, `height_m`, `z_med` (m) and `depth_gap_ms` per detection
-3. `outputs/localized.json` - Module 3 adds `position_3d {x, y, z, unit: "m", frame: "camera"}` for accepted real detections
+3. `outputs/localized_{eval,test}.json` - Module 3 adds `position_3d {x, y, z, unit: "m", frame: "camera_color_optical_frame"}` for accepted real detections (`null` for rejected ones) and `depth_image_id`, `color_depth_gap_ms` per frame
 
 Image ids are the timestamp in the file name (`camera_color_image_<ns>.png`); depth frames are matched to colour frames by nearest timestamp (117 depth frames for 215 colour frames, so record the time gap and reject matches that are too far apart).
 
@@ -69,6 +69,19 @@ Run (recordings extracted to `data/raw/{eval,test}/`; numpy 2.5.4, opencv-python
 ```
 make         # test with TPR/FPR, then eval
 make score   # final eval TPR/FPR, needs labels/eval_first64 and labels/eval_last63
+```
+
+## Module 3 - 3D localization and evaluation
+- 3D position: depth = median of the valid pixels in an 11 x 11 patch at the box centre (depth frame matched by timestamp, at most 100 ms away); X = (u - cx) * Z / fx, Y = (v - cy) * Z / fy. Camera frame `camera_color_optical_frame` (X right, Y down, Z forward), metres. Only detections accepted as real get a position.
+- Eval: all 115 accepted detections localized, Z 0.97-4.67 m (median 2.23 m).
+- `src/evaluate.py` compares the baseline (`detections_<split>.json`) and the final system (`filtered_<split>.json`) on the same labels with the `src/labels.py` metric and saves `outputs/evaluation_<split>.txt`; the numbers are the tables above.
+- Figures (`outputs/figures/`, not in the repo): TPR/FPR bar charts, 3D scatter of the positions, example frames (real accepted, decoys rejected, real missed) and one frame with its 3D position.
+
+Run (after Module 2):
+```
+make localize   # outputs/localized_{test,eval}.json
+make evaluate   # outputs/evaluation_{test,eval}.txt
+make figures    # outputs/figures/
 ```
 
 ## Reproduce
